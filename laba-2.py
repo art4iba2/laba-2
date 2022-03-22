@@ -19,7 +19,7 @@ try:
                     quantity += 0
                     result_block.append(block)
 
-                elif block == '.' or block == ','  or block == '-': #если число дробное или отрицательное заносим в массив
+                elif block == '.' or block == ',' :                 #если число дробное заносим в массив
                     quantity += 0
                     result_block.append(block)
 
