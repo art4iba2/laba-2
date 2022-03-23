@@ -19,10 +19,6 @@ try:
                     quantity += 0
                     result_block.append(block)
 
-                elif block == '.' or block == ',' :                 #если число дробное заносим в массив
-                    quantity += 0
-                    result_block.append(block)
-
                 block = file.read(buffer)
                 if block.isnumeric() == False and block != '.' and block != ',' and block != '-'  : #если символ не цифра и не '.' ',' '-'  то кол-во чисел увеличивваем на 1
                   quantity += 1
