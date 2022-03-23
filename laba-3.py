@@ -14,10 +14,10 @@ try:
         block = file.read(buffer)                                   #читается первый блок
 
         while block:                                                #пока файл не пустой ищем цифры
-            while (block < '0' or block > '9') and block:
+            while (block < '0' or block > '9' ) and block:
                 block = file.read(buffer)                           #читатся очередной блок
 
-            while (block >= '0' and block <= '9' or block == '.' or block == ',') and block: #обрабатываются цифры
+            while (block >= '0' and block <= '9' or block == '.' or block == ',' or block == '-') and block: #обрабатываются цифры
 
                 if block.isnumeric() == True :                      #если символ число, то кол-во не увеличиваем и заносим в массив для вывода
                     quantity += 0
@@ -31,7 +31,8 @@ try:
 
 
 
-        print('Количество чисел в последовательности: ',quantity)   #выводится кол-во чисел
-except FileNotFoundError:                                           #исключаем ошибку 'файл не найден' для понимания ( почему программа не работает)
+        print('Количество чисел в последовательности: ',quantity)  #выводится кол-во чисел
+except FileNotFoundError:                                          #исключаем ошибку 'файл не найден' для понимания ( почему программа не работает)
   print ("\nФайл в директории проекта не обнаружен.\nДобавьте файл в директорию или переименуйте существующий *.txt файл.")
-print("Время работы программы:  ", time.process_time(), "seconds")  #выводится время работы программы
+print("Время работы программы:  ", time.process_time(), "seconds") #выводится время работы программы
+
