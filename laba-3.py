@@ -2,6 +2,8 @@
 выводит на экран используемые цифры и их количество
 а так же время работы программы'''
 
+'''Написать программу, которая читая последовательность чисел из файла,
+выводит на экран используемые цифры и их количество'''
 import time
 
 
@@ -17,14 +19,14 @@ try:
             while (block < '0' or block > '9' ) and block:
                 block = file.read(buffer)                           #читатся очередной блок
 
-            while (block >= '0' and block <= '9' or block == '.' or block == ',' or block == '-') and block: #обрабатываются цифры
+            while (block >= '0' and block <= '9' or block == '.' or block == ',' ) and block: #обрабатываются цифры
 
                 if block.isnumeric() == True :                      #если символ число, то кол-во не увеличиваем и заносим в массив для вывода
                     quantity += 0
                     result_block.append(block)
 
                 block = file.read(buffer)
-                if block.isnumeric() == False and block != '.' and block != ',' and block != '-'  : #если символ не цифра и не '.' ',' '-'  то кол-во чисел увеличивваем на 1
+                if block.isnumeric() == False and block != '.' and block != ',': #если символ не цифра и не '.' ',' то кол-во чисел увеличивваем на 1
                   quantity += 1
             print(result_block)                                     #выводится прочтенное число
             result_block = []                                       #очищается массив для следующего числа
@@ -35,4 +37,5 @@ try:
 except FileNotFoundError:                                          #исключаем ошибку 'файл не найден' для понимания ( почему программа не работает)
   print ("\nФайл в директории проекта не обнаружен.\nДобавьте файл в директорию или переименуйте существующий *.txt файл.")
 print("Время работы программы:  ", time.process_time(), "seconds") #выводится время работы программы
+
 
