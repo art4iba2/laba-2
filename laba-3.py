@@ -26,7 +26,7 @@ try:
                     result_block.append(block)
 
                 block = file.read(buffer)
-                if block.isnumeric() == False and block != '.' and block != ',': #если символ не цифра и не '.' ',' то кол-во чисел увеличивваем на 1
+                if block.isnumeric() == False and block != '.' and block != ',': #если символ не цифра то кол-во чисел увеличивваем на 1
                   quantity += 1
             print(result_block)                                     #выводится прочтенное число
             result_block = []                                       #очищается массив для следующего числа
