@@ -24,7 +24,7 @@ try:
                     result_block.append(block)
 
                 block = file.read(buffer)
-                if block.isnumeric() == False and block != '.' and block != ',': #если символ не цифра и не '.' ',' то кол-во чисел увеличивваем на 1
+                if block.isnumeric() == False and block != '.' and block != ',': #если символ не цифра или '.' ',' то кол-во чисел увеличивваем на 1
                   quantity += 1
             support_block = result_block
             print(result_block)                                     #выводится прочтенное число
