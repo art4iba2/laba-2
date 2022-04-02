@@ -28,7 +28,7 @@ try:
                 block = file.read(buffer)
                 if block.isnumeric() == False and block != '.' and block != ',': #если символ не цифра или '.' ',' то кол-во чисел увеличивваем на 1
                   quantity += 1
-            support_block = result_block
+            
             print(result_block)                                     #выводится прочтенное число
             result_block = []                                       #очищается массив для следующего числа
         if quantity == 0 :
